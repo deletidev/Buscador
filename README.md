@@ -1,6 +1,6 @@
 # Buscador
 
-![Imagen del proyecto](public/buscador.png)
+![Imagen del proyecto](src/public/buscador.png)
 
 ## Ejemplo en vivo
 
