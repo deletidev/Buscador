@@ -1,0 +1,23 @@
+:root {
+  --color-alive: 111 228 53;
+  --color-dead: 227 43 33;
+  --color-unknown: 250 128 26;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
