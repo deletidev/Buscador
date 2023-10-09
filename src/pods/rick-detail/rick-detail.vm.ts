@@ -14,3 +14,19 @@ export interface CharacterVm {
   image: string;
   created: string;
 }
+
+export const initCharacter = (): CharacterVm => ({
+  id: 0,
+  name: '',
+  status: '',
+  species: '',
+  gender: '',
+  origin: {
+    name: ''
+  },
+  location: {
+    name: ''
+  },
+  image: '',
+  created: ''
+});
