@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 export const container = css`
   --background-color: #022302;
   --decoration-color: rgb(var(--color-alive));
-  font-family: ${rickTheme.typography.fontFamily};
+
   flex-grow: 1;
   display: flex;
   background-color: var(--background-color);
