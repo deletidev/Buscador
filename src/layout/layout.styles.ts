@@ -6,7 +6,7 @@ const urlBackgroundImage = `url(${backgroundImg})`;
 
 export const center = css`
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   min-height: 780px;
   display: flex;
   align-items: center;
