@@ -1,6 +1,8 @@
 import { rickTheme } from '@/core';
 import { css } from '@emotion/react';
+import portalImg from '@/assets/portalRyM.png';
 
+const urlPortalImg = `url(${portalImg})`;
 export const grid = css`
   flex-grow: 1;
   display: grid;
@@ -64,7 +66,7 @@ export const image = css`
     position: absolute;
     width: 100%;
     height: 155%;
-    background-image: url('/assets/portalRyM.png');
+    background-image: ${urlPortalImg};
     background-repeat: no-repeat;
     background-size: contain;
     left: -10px;

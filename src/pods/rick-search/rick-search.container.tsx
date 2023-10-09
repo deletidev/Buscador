@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { RickSearchComponent } from './rick-search.component';
-
 import { useCharacterPage } from './rick-search.hook';
-import { useSearchCharacterContext } from '@/core';
 
 export const RickSearchContainer: React.FC = () => {
   const { dispatch, searchState, updateCharactersPage } = useCharacterPage();
