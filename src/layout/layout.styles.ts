@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 import backgroundImg from '@/assets/fondoRyMpx.jpg';
+import { rickTheme } from '@/core';
 
 const urlBackgroundImage = `url(${backgroundImg})`;
 
@@ -29,6 +30,7 @@ export const headerCss = {
 };
 
 export const rick = css`
+  font-family: ${rickTheme.typography.fontFamily};
   background-image: ${urlBackgroundImage};
   background-repeat: no-repeat;
   background-position: bottom center;
