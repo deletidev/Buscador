@@ -31,7 +31,9 @@ export const RickSearchPaginationComponent: React.FC<Props> = props => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 1.5
+        gap: 1.5,
+        fontSize: '14px',
+        marginTop: { sx: '6px', sm: 1.5 }
       }}
     >
       <Button
@@ -39,9 +41,10 @@ export const RickSearchPaginationComponent: React.FC<Props> = props => {
         disabled={searchState.page === 1 ? true : false}
         variant="contained"
         size="small"
+        sx={{ fontSize: '14px' }}
         startIcon={<ArrowBackIosNewIcon />}
       >
-        <span css={{ paddingTop: '4px' }}>Prev</span>
+        Prev
       </Button>
       <p> {` ${searchState.page} of ${searchState.totalPages} `}</p>
       <Button
@@ -49,10 +52,11 @@ export const RickSearchPaginationComponent: React.FC<Props> = props => {
         disabled={searchState.totalPages === searchState.page ? true : false}
         variant="contained"
         size="small"
+        sx={{ fontSize: '14px' }}
         color="secondary"
         endIcon={<ArrowForwardIosIcon />}
       >
-        <span css={{ paddingTop: '4px' }}>Next</span>
+        Next
       </Button>
     </Box>
   );

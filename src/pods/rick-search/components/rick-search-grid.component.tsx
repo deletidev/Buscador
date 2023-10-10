@@ -56,9 +56,12 @@ export const RickSearchGridComponent: React.FC<Props> = props => {
       <div
         css={{
           display: 'grid',
-          gap: '40px',
+          gap: `${rickTheme.spacing(3.5)}`,
           gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-          justifyItems: 'center'
+          justifyItems: 'center',
+          '@media screen and (min-width: 600px)': {
+            gap: `${rickTheme.spacing(5)}`
+          }
         }}
       >
         {characters.length > 0 ? (

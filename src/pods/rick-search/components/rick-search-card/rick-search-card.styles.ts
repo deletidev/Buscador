@@ -104,9 +104,7 @@ export const card = css`
     display: block;
     text-decoration: none;
     color: black;
-    font-family: 'Orbitron';
     padding: 0.5rem;
-    padding-top: 0.7rem;
     border: none;
     border-radius: 0;
     background-color: rgb(var(--var-color));

@@ -6,7 +6,7 @@ export const info = css`
   overflow: scroll;
   @media screen and (min-width: 800px) {
     align-self: flex-start;
-    padding-top: 30px;
+    padding-top: 40px;
   }
 
   & p {
@@ -16,7 +16,12 @@ export const info = css`
     letter-spacing: 2px;
     font-weight: 600;
     @media screen and (min-width: 800px) {
-      fontsize: '20px';
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    @media screen and (min-width: 1000px) {
+      font-size: 19px;
+      line-height: 1.7;
     }
   }
   & span {
@@ -24,7 +29,10 @@ export const info = css`
     font-weight: 400;
     color: ${rickTheme.palette.common.white};
     @media screen and (min-width: 800px) {
-      fontsize: 22px;
+      font-size: 18px;
+    }
+    @media screen and (min-width: 1000px) {
+      font-size: 20px;
     }
   }
 `;

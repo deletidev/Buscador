@@ -5,7 +5,7 @@ import { Box, Container, Link } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import logo from '@/assets/logo_rym.svg';
 
-import { center, headerCss, rick } from './layout.styles';
+import { center, header, rick } from './layout.styles';
 
 interface Props {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ export const RickLayout: React.FC<Props> = props => {
   const { children, rute } = props;
   return (
     <div css={[center, rick]}>
-      <Box component="header" sx={headerCss} color="common.white">
+      <Box component="header" sx={header} color="common.white">
         <Container
           maxWidth="xl"
           sx={{ display: 'flex', justifyContent: 'space-between' }}
@@ -29,10 +29,10 @@ export const RickLayout: React.FC<Props> = props => {
             sx={{ display: 'flex', alignItems: 'center' }}
           >
             <ArrowBackIosNewIcon fontSize="inherit" />
-            <span css={{ paddingTop: '4px' }}>Back</span>
+            <span>Back</span>
           </Link>
 
-          <img src={logo} alt="Rick and Morty logo" height="40px" />
+          <img src={logo} alt="Rick and Morty logo" height="38px" />
         </Container>
       </Box>
       <Container

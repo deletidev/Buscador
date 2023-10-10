@@ -7,7 +7,8 @@ export const grid = css`
   flex-grow: 1;
   display: grid;
   grid-template-areas: ' title' 'portal' 'info';
-  grid-template-columns: 'auto';
+  grid-template-columns: auto;
+  justify-content: center;
   justify-items: left;
   align-items: center;
   gap: ${rickTheme.spacing(2)};
@@ -15,9 +16,10 @@ export const grid = css`
   border-bottom: 4px solid var(--decoration-color);
   padding: ${rickTheme.spacing(0.5)};
   @media screen and (min-width: 800px) {
-    grid-template-areas: 'portal title' 'portal info';
-    grid-template-columns: 'auto 1fr';
+    grid-template-areas: 'title title' 'portal info';
+    grid-template-columns: 1fr 1fr;
     gap: ${rickTheme.spacing(5)};
+    row-gap: ${rickTheme.spacing(4)};
   }
 `;
 
@@ -29,22 +31,25 @@ export const title = css`
   color: var(--decoration-color);
   font-size: 29px;
   line-height: 1.2;
+  @media screen and (min-width: 600px) {
+    font-size: 38px;
+  }
   @media screen and (min-width: 800px) {
     font-size: 50px;
     align-self: flex-end;
-    padding-bottom: 50px;
+    margin-left: 41%;
     position: relative;
-    left: -70px;
   }
 `;
 
 export const image = css`
   position: relative;
   z-index: 0;
-  padding-left: 58px;
+  justify-self: center;
   grid-area: portal;
   @media screen and (min-width: 800px) {
     justify-self: right;
+    align-self: start;
   }
   img {
     display: block;
@@ -57,8 +62,7 @@ export const image = css`
     margin-left: auto;
     box-shadow: 0 0 10px black;
     @media screen and (min-width: 800px) {
-      width: 200px;
-      margin-left: 90px;
+      width: 180px;
     }
   }
   &::before {
@@ -69,14 +73,14 @@ export const image = css`
     background-image: ${urlPortalImg};
     background-repeat: no-repeat;
     background-size: contain;
-    left: -10px;
+    left: -50px;
     bottom: -32px;
     z-index: -1;
     @media screen and (min-width: 800px) {
-      height: 250%;
-      width: 80%;
-      bottom: -80%;
-      left: -25px;
+      width: 115%;
+      height: 280%;
+      bottom: -130%;
+      left: -55%;
     }
   }
 `;

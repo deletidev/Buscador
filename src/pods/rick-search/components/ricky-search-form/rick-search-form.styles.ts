@@ -6,8 +6,8 @@ export const input = {
   border: '6px solid',
   borderColor: 'primary.main',
   position: 'relative',
-  marginTop: 2.5,
-  marginBottom: 2.5
+  marginTop: 2,
+  marginBottom: { xs: 1.5, sm: 2 }
 };
 
 export const inputIcon = {

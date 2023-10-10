@@ -19,7 +19,7 @@ export const center = css`
   }
 `;
 
-export const headerCss = {
+export const header = {
   width: '100%',
   paddingTop: 1.5,
   paddingBottom: 1.5,
@@ -33,9 +33,8 @@ export const rick = css`
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  min-height: 812px;
-  gap: 15px;
+  gap: 8px;
   @media screen and (min-width: 600px) {
-    gap: 30px;
+    gap: 16px;
   }
 `;
