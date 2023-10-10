@@ -32,10 +32,8 @@ export const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   },
   '&::-webkit-scrollbar-thumb': {
     background: theme.palette.primary.dark,
-    borderRadius: '12px',
-    border: `4px solid ${theme.palette.background.default}`,
-    borderTop: 'none',
-    borderBottom: 'none'
+    borderRadius: '24px',
+    border: `4px solid ${theme.palette.background.default}`
   },
   '&::-webkit-scrollbar-track': {
     background: theme.palette.background.default
