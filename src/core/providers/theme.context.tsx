@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme, ThemeProvider } from '@mui/material';
+import { Theme, ThemeProvider, createTheme } from '@mui/material';
 
 import { myTheme } from '@/core';
 
@@ -11,7 +11,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-const MyThemeContext = React.createContext<ThemeContextModel>(null);
+const MyThemeContext = React.createContext<ThemeContextModel>({
+  theme: createTheme(),
+  setTheme: (theme: Theme) => {}
+});
 
 export const MyThemeProvider: React.FC<Props> = props => {
   const { children } = props;

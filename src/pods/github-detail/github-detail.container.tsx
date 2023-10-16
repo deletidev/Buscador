@@ -10,7 +10,9 @@ export const GithubDetailContainer: React.FC = () => {
   const [member, setMember] = React.useState<Member>(initMember());
 
   React.useEffect(() => {
-    getMember(login).then(setMember);
+    if (login) {
+      getMember(login).then(setMember);
+    }
   }, []);
 
   return <GithubDetailComponent member={member}></GithubDetailComponent>;

@@ -18,7 +18,7 @@ interface Props {
 export const GithubSearchTableComponent: React.FC<Props> = props => {
   const { members } = props;
   const { userCompany } = useProfileContext();
-  const tableScroll = React.useRef(null);
+  const tableScroll = React.useRef<HTMLTableElement>(null);
 
   React.useEffect(() => {
     if (tableScroll.current) {

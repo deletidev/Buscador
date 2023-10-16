@@ -1,3 +1,4 @@
+import { create } from '@mui/material/styles/createTransitions';
 import React from 'react';
 
 export interface SearchCharacter {
@@ -15,13 +16,23 @@ interface Props {
   children: React.ReactNode;
 }
 
-const SearchCharacterContext =
-  React.createContext<SearchCharacterContextModel>(null);
+const createEmptySearchCharacter = (): SearchCharacter => ({
+  searchCharacter: '',
+  searchPage: 1,
+  searchScroll: 0
+});
+
+const SearchCharacterContext = React.createContext<SearchCharacterContextModel>(
+  {
+    searchCharacter: createEmptySearchCharacter(),
+    setSearchCharacter: (searchCharacter: SearchCharacter) => {}
+  }
+);
 
 export const SearchCharacterProvider: React.FC<Props> = props => {
   const { children } = props;
   const [searchCharacter, setSearchCharacter] = React.useState<SearchCharacter>(
-    { searchCharacter: '', searchPage: 1, searchScroll: 0 }
+    createEmptySearchCharacter()
   );
 
   return (

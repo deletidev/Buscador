@@ -1,7 +1,7 @@
 import { MemberApi } from './api.model';
 
 interface Data {
-  linkHeader: string;
+  linkHeader?: string;
   data: MemberApi[];
 }
 export const catchMembersApi = async (
@@ -19,7 +19,9 @@ export const catchMembersApi = async (
   }
 
   const linkHeader = response.headers.get('Link');
-
   const data: MemberApi[] = await response.json();
+  if (!linkHeader) {
+    return { linkHeader: undefined, data };
+  }
   return { linkHeader, data };
 };

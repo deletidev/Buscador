@@ -12,7 +12,9 @@ export const RickDetailContainer: React.FC = () => {
   );
 
   React.useEffect(() => {
-    getCharacter(id).then(setCharacter);
+    if (id) {
+      getCharacter(id).then(setCharacter);
+    }
   }, []);
 
   return <RickDetailComponent character={character}></RickDetailComponent>;

@@ -10,7 +10,7 @@ interface Props {
 }
 export const RickSearchGridComponent: React.FC<Props> = props => {
   const { characters } = props;
-  const containerScroll = React.useRef(null);
+  const containerScroll = React.useRef<HTMLDivElement>(null);
   const { searchCharacter, setSearchCharacter } = useSearchCharacterContext();
 
   React.useEffect(() => {

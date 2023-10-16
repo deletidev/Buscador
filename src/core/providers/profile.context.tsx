@@ -13,7 +13,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-const ProfileContext = React.createContext<ProfileContextModel>(null);
+const ProfileContext = React.createContext<ProfileContextModel>({
+  userCompany: '',
+  setUserCompany: (userCompany: string) => {}
+});
 
 export const ProfileProvider: React.FC<Props> = props => {
   const { children } = props;
