@@ -14,12 +14,21 @@ export const catchMembersApi = async (
 
   if (!response.ok) {
     if (response.status === 404) {
-      throw new Error('Petición incorrecta: ' + response.statusText);
+      throw new Error('No existe una compañia con el nombre ' + value);
     }
+    if (response.status === 403) {
+      throw new Error(
+        'Se ha excedido el límite de búsquedas en la Api, vuelva a intentarlo más tarde'
+      );
+    }
+    throw new Error('Se ha producido un error, vuelva a intentarlo más tarde');
   }
 
   const linkHeader = response.headers.get('Link');
   const data: MemberApi[] = await response.json();
+  console.log(page);
+  console.log(value);
+  console.log(data);
   if (!linkHeader) {
     return { linkHeader: undefined, data };
   }

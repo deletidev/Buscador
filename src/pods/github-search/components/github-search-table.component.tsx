@@ -6,32 +6,45 @@ import {
   StyledTableContainer,
   StyledTableRow
 } from '@/core/theme';
-import { useProfileContext } from '@/core';
 import { MemberEntity } from '@/pods/github-search/github-search.vm';
 
 import { GithubSearchRowComponent } from './github-search-row.component';
+import { useGithubContext } from '@/core';
 
 interface Props {
   members: MemberEntity[];
+  error: string;
 }
 
 export const GithubSearchTableComponent: React.FC<Props> = props => {
-  const { members } = props;
-  const { userCompany } = useProfileContext();
-  const tableScroll = React.useRef<HTMLTableElement>(null);
+  const { members, error } = props;
+
+  const containerScroll = React.useRef<HTMLTableElement>(null);
+  const { github, setGithub } = useGithubContext();
 
   React.useEffect(() => {
-    if (tableScroll.current) {
-      tableScroll.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+    if (containerScroll.current) {
+      containerScroll.current.scroll({
+        top: github.scrollPosition,
+        behavior: 'smooth'
       });
     }
   }, [members]);
 
+  const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>) => {
+    setGithub({
+      ...github,
+      scrollPosition: e.currentTarget.scrollTop
+    });
+  };
+
   return (
     <Paper sx={{ padding: { xs: 1, sm: 2 }, flexGrow: 1, height: 100 }}>
-      <StyledTableContainer sx={{ height: '100%' }}>
+      <StyledTableContainer
+        sx={{ height: '100%' }}
+        ref={containerScroll}
+        onScroll={handleScroll}
+      >
         <Table
           stickyHeader
           aria-label="sticky table"
@@ -39,7 +52,6 @@ export const GithubSearchTableComponent: React.FC<Props> = props => {
             minWidth: 350,
             borderCollapse: 'collapse'
           }}
-          ref={tableScroll}
         >
           <TableHead>
             <TableRow>
@@ -69,7 +81,7 @@ export const GithubSearchTableComponent: React.FC<Props> = props => {
             ) : (
               <StyledTableRow>
                 <StyledTableCell>
-                  <p>{`No existe una compañia con el nombre ${userCompany}`}</p>
+                  <p>{error ? error : 'Loading...'}</p>
                 </StyledTableCell>
               </StyledTableRow>
             )}

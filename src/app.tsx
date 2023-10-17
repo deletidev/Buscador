@@ -3,7 +3,7 @@ import { CssBaseline } from '@mui/material';
 import {
   AppRouter,
   MyThemeProvider,
-  ProfileProvider,
+  GithubProvider,
   SearchCharacterProvider
 } from '@/core';
 
@@ -12,9 +12,9 @@ export const App = () => {
     <MyThemeProvider>
       <CssBaseline />
       <SearchCharacterProvider>
-        <ProfileProvider>
+        <GithubProvider>
           <AppRouter />
-        </ProfileProvider>
+        </GithubProvider>
       </SearchCharacterProvider>
     </MyThemeProvider>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { InputAdornment, Paper, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { useProfileContext } from '@/core/providers/profile.context';
+import { useGithubContext } from '@/core/providers/github.context';
 
 import { inputIcon } from './github-search-form.styles';
 
@@ -12,13 +12,15 @@ interface Props {
 
 export const GithubSearchFormComponent = React.memo((props: Props) => {
   const { onSubmit } = props;
-  const { userCompany, setUserCompany } = useProfileContext();
+  const { github, setGithub } = useGithubContext();
 
-  const [value, setValue] = React.useState(userCompany);
+  //Para que el input si no se encuentra la compañia, el mensaje de la compañía no encontrada no cambie
+  const [value, setValue] = React.useState(github.company);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-    setUserCompany(value);
+    setGithub({ company: value, page: 1, scrollPosition: 0 });
+    console.log(github);
     onSubmit(value);
   };
 

@@ -14,10 +14,11 @@ interface Props {
   members: MemberEntity[];
   handleSubmit: (valor: string) => void;
   handleClick: (page: number) => void;
+  error: string;
 }
 
 export const GithubSearchComponent: React.FC<Props> = props => {
-  const { page, totalPage, members, handleSubmit, handleClick } = props;
+  const { page, totalPage, members, handleSubmit, handleClick, error } = props;
 
   return (
     <>
@@ -29,6 +30,7 @@ export const GithubSearchComponent: React.FC<Props> = props => {
       ></GithubSearchFormComponent>
       <GithubSearchTableComponent
         members={members}
+        error={error}
       ></GithubSearchTableComponent>
       <GithubSearchPaginationComponent
         page={page}

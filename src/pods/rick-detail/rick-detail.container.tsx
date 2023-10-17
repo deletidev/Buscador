@@ -1,5 +1,5 @@
 import React from 'react';
-import { characterMock } from './mockCharacters';
+// import { characterMock } from './mockCharacters';
 import { RickDetailComponent } from './rick-detail.component';
 import { useParams } from 'react-router-dom';
 import { CharacterVm, initCharacter } from './rick-detail.vm';
