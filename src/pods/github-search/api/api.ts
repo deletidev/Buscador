@@ -26,9 +26,7 @@ export const catchMembersApi = async (
 
   const linkHeader = response.headers.get('Link');
   const data: MemberApi[] = await response.json();
-  console.log(page);
-  console.log(value);
-  console.log(data);
+
   if (!linkHeader) {
     return { linkHeader: undefined, data };
   }
