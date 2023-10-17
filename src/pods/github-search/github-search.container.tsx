@@ -17,8 +17,6 @@ export const GithubSearchContainer = () => {
     setError
   } = useMemberPage();
 
-  // const [page, setPage] = React.useState(1);
-
   React.useEffect(() => {
     updateMembersPage(github.company, github.page);
   }, []);
