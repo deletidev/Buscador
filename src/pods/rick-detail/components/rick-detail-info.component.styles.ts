@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 export const info = css`
   grid-area: info;
-  overflow: scroll;
+  overflow: auto;
   @media screen and (min-width: 800px) {
     align-self: flex-start;
     padding-top: 40px;
