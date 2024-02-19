@@ -1,4 +1,4 @@
-# Buscador (En desarrollo)
+# Buscador
 
 ![Imagen del proyecto](src/public/buscador.png)
 
